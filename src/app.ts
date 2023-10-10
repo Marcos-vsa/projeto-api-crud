@@ -18,5 +18,7 @@ app.delete("/users/:user_id", deletarUsuario);
 //rotas produtos 
 app.post("/products", ProductController.createProduct);
 app.get("/products", ProductController.listProducts);
+app.patch('/products/:product_id', ProductController.updateProduct)
+app.delete('/products/:product_id',ProductController.deleteProduct)
 
 export default app;
