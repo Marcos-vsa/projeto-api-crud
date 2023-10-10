@@ -1,4 +1,5 @@
-import { Entity , PrimaryGeneratedColumn , Column, CreateDateColumn, UpdateDateColumn, DeleteDateColumn } from "typeorm";
+import { Entity , PrimaryGeneratedColumn , Column, CreateDateColumn, UpdateDateColumn, DeleteDateColumn, ManyToOne } from "typeorm";
+import { User } from "./user";
 
 @Entity('product')
 export class Product{
@@ -26,4 +27,6 @@ export class Product{
     @DeleteDateColumn()
     deleted_at: Date;
 
+    @ManyToOne(() => User,(user)=>user.products)
+    user:User
 }
